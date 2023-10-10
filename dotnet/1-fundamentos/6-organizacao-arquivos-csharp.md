@@ -1,16 +1,12 @@
 # Organização dos Arquivos em C#
 
-* O .cs é o arquivo de classe.
-* O .csproj possui os metadados do projeto.
+* O `.cs` é o arquivo de classe.
+* O `.csproj` possui os metadados do projeto.
   * O OutputType será o que vai sair na hora do build (se tem executável
 ou não)
-  * São tipos as opções, como o projeto deverá ser
-  * Muito provavelmente não precisará ser alterado, pois já vem
-configurado
+  * São tipos as opções, como o projeto deverá ser.
+* Solution é um agrupamento de projetos.
 * Ao compilar, grande parte dos arquivos serão jogados na pasta “obj”.
-* “Bin” é a pasta de binários
-  * O build será enviado para cá (os .exe, .dll, etc.)
-* Pasta “bin” e “obj” são pastas que não precisam ser mexidas, nem salvas no
-versionamento. Pois ao executar o build, essas pastas serão geradas
-novamente.
-* Solution é um agrupamento de projetos
+* O "bin" é a pasta de binários
+  * O build será enviado para cá (os `.exe`, `.dll`, etc.)
+* A pasta “bin” e “obj” são pastas que não precisam ser mexidas, nem salvas no versionamento. Pois ao executar o build, essas pastas serão geradas novamente.

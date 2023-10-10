@@ -20,14 +20,19 @@
 * O Program.cs é o início do sistema.
 * Para pegar um classe de outro namespace:
   * Colocar o using com o namespace da classe
-  * Depois instanciar com “<NomeClasse> <nome var> = new <NomeClasse>()”
+  * Depois instanciar com: 
+    ```C# 
+    <NomeClasse> <nome var> = new <NomeClasse>() 
+    ```
 * Podemos ter classes com nomes iguais, porém os namespaces devem ser diferentes
 * Quando for instanciada a classe, o “new” irá dizer que aquela classe já foi feita (executada) e pode ser usada e alimentada como uma variável normal.
-* Padrões de escritas (cases):
-  * camelCase: para variáveis
-  * PascalCase: para nomes de classes, métodos, propriedades
-  * snake_case 
-  * spinal-case
-* O camelCase e PascalCase são os mais usando em C#.
 * Evitar abreviações (convenção), para deixar mais claro o código.
 * O nome do arquivo deve ser o mesmo da classe (convenção).
+
+### Padrões de escritas (cases):
+* camelCase: para variáveis
+* PascalCase: para nomes de classes, métodos, propriedades
+* snake_case 
+* spinal-case
+* O camelCase e PascalCase são os mais usando em C#.
+
