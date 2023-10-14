@@ -4,7 +4,10 @@
 * No VSCode da pra rodar o debug (canto esquerdo)
 * No C temos `else if`
 * Usar `Console.ReadLine()` para ler o que veio de input do usuário no console.
-* A sintaxe do switch pode ser “switch (var) {case “valor”: break}”
+* A sintaxe do switch:
+    ```C#
+    switch (var) {case “valor”: break}”
+    ```
     * O switch vai observar o valor da variável
     * Tem a condição default também
 * Operadores Lógicos
@@ -26,9 +29,21 @@
 * Já a sintaxe do `while` só é preciso colocar a condição do limite (“limite cont”), ou seja sempre que a condição for verdadeira.
     * Ele vai precisar ter o contador incrementado dentro do while, que vai ser incrementado depois de fazer o que queremos dentro do while.
     * Possível usar o “break” para fazer o while parar.
-* O “Do While” vai primeiro fazer o laço e ao final vai verificar se a condição ainda é verdadeira ou não
-    * A sintaxe: “Do {} while()”
+* O `Do While` vai primeiro fazer o laço e ao final vai verificar se a condição ainda é verdadeira ou não
+    * A sintaxe do `Do While`: 
+    ```C#
+    //executa o código, enquanto i for menor ou igual a 5
+    int i = 0;
+    Do {
+        i++;
+    } while(i <= 5)
+    ```
 * Possível declarar várias variáveis do mesmo tipo numa única linha.
+  ```C#
+  //declarar com ou sem valores
+  int i, j, k;
+  int l = 10, m = 20, n = 30;
+  ```
 * No VSCode não é possível debugar usando o terminal (Console.ReadLine não funciona por exemplo)
     * No launch.json, alterar o console para “integratedTerminal”
     * Ao invés de usar o debug console, usar o terminal durante a debugação

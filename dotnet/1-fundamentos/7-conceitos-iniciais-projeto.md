@@ -1,9 +1,9 @@
 # Conceitos Iniciais para o Projeto
 
 ### Abstração
-* A abstração seria pegar um objeto do mundo real para transformá-lo em um objeto na programação.
+* A abstração é o conceito de pegar um objeto do mundo real para transformá-lo em um objeto na programação.
   * Uma classe é um conceito representado do mundo real.
-* Abstrair somente o necessário, o que será usado de fato.
+* Para simplificar os processos, é recomendado abstrair somente o necessário, ou seja, o que será usado de fato.
 
 ### Classe e Métodos
 * Um método é uma ação que a classe vai fazer (ele tem parênteses no final).
@@ -22,17 +22,21 @@
   * Colocar o using com o namespace da classe
   * Depois instanciar com: 
     ```C# 
-    <NomeClasse> <nome var> = new <NomeClasse>() 
+    //nome da classe, variável = nova instância da classe
+    Pessoa p1 = new Pessoa(); 
     ```
+* Quando for instanciada a classe, o `new` irá dizer que aquela classe já foi feita (executada) e pode ser usada e alimentada como uma variável normal.
 * Podemos ter classes com nomes iguais, porém os namespaces devem ser diferentes
-* Quando for instanciada a classe, o “new” irá dizer que aquela classe já foi feita (executada) e pode ser usada e alimentada como uma variável normal.
 * Evitar abreviações (convenção), para deixar mais claro o código.
 * O nome do arquivo deve ser o mesmo da classe (convenção).
 
 ### Padrões de escritas (cases):
-* camelCase: para variáveis
-* PascalCase: para nomes de classes, métodos, propriedades
-* snake_case 
-* spinal-case
 * O camelCase e PascalCase são os mais usando em C#.
+  * `camelCase`
+    * Variáveis
+  * `PascalCase` 
+    * Nomes de classes, métodos, propriedades
+* `snake_case` 
+* `spinal-case`
+
 
