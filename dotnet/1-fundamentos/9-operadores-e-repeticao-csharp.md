@@ -1,26 +1,32 @@
 # Operadores e Estuturas de Repetição C#
 
 * Com o operador lógico dentro do `WriteLine`, podemos mostrar os valores de condições diretamente.
-* No VSCode da pra rodar o debug (canto esquerdo)
-* No C temos `else if`
+* No VSCode da pra rodar o debug (canto esquerdo).
+* No C# temos `else if`.
 * Usar `Console.ReadLine()` para ler o que veio de input do usuário no console.
 * A sintaxe do switch:
     ```C#
-    switch (var) {case “valor”: break}”
+    //colocar a condição, e depois colocar os resultados no case
+    int i = 2;
+    switch (i) 
+    {
+        case 1: 
+            //colocado o break para ele não executar mais o resto do switch
+            break;
+        case 2:
+            //código (esse que vai ser executado nesse caso)
+            break;
+        default
+            //código caso n entre em nenhuma condição
+            break;
+    }
     ```
     * O switch vai observar o valor da variável
-    * Tem a condição default também
 * Operadores Lógicos
     * OR - `||`
     * AND - `&&`
     * NOT - `!`
-* O módulo “%” vai retornar o resto de uma divisão
-* Dentro da classe Math temos vários tipos de operações
-    * Como Log, potência, etc.
-* A classe Math também tem as funções trigonométricas (seno, cosseno, tangente, etc)
-    * A mesma tem o pi, para ser usada no cálculo para transformar o ângulo em radianos.
-    * O método round da classe Math vai arredondar os valores, nele é possível dizer quantas casas deve ser mostrado depois da vírgula
-* Usar o método sqrt da classe Math para calcular a raiz quadrada.
+* O módulo `%` vai retornar o resto de uma divisão
 * A sintaxe do `for` é:
     ```C#
     //inicio contador; limite contador; incrementação contador
@@ -47,8 +53,16 @@
 * No VSCode não é possível debugar usando o terminal (Console.ReadLine não funciona por exemplo)
     * No launch.json, alterar o console para “integratedTerminal”
     * Ao invés de usar o debug console, usar o terminal durante a debugação
-* Usar “While(true)” para sempre ficar rodando
-    * Para sair repentinamente, podemos usar “Environment.Exit(0)”
-        * Isso termina com o programa inteiro
-    * No exemplo, isso foi usado para fazer um menu
-        * Depois foi usada uma flag para fazer isso
+* Usar `While(true)` para sempre ficar rodando
+    * Para sair repentinamente, podemos usar `Environment.Exit(0)`
+        * Isso termina com o programa inteiro.
+    * Podemos fazer meenus no console, usando o laço de repetição dessa forma.
+
+### Classe Math
+
+* Declarar essa classe para ter vários tipos de operções
+    * Como Log, potência, etc.
+* Ela também tem as funções trigonométricas (seno, cosseno, tangente, etc)
+    * A mesma tem o pi, para ser usada no cálculo para transformar o ângulo em radianos.
+    * O método round vai arredondar os valores, nele é possível dizer quantas casas deve ser mostrado depois da vírgula
+* Usar o método sqrt dela para calcular a raiz quadrada.

@@ -16,7 +16,7 @@
 ### Data
 * DateTime é o tipo de variável de tempo
   * DateTime também é um “struct” (DateTime.Now), é possível adicionar valores nesse método também.
-  * Possível usar `ToString` para mudar a formatação da data
+  * Possível usar `ToString()` para mudar a formatação da data
 
 ### Conversões
 * Para converter o tipo da variável é necessário fazer um “cast”
