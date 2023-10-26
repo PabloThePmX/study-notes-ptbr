@@ -1,6 +1,4 @@
-# Variáveis
-
-## Tipos de Variáveis
+# Tipos de Variáveis
 
 ### Numéricos
 * No C# podemos usar o tipo char para representar UM caractere.
@@ -21,7 +19,7 @@
   * Possível usar `ToString()` para mudar a formatação da data
 
 ## Declaração
-* Para declarar, colocamos o tipo, o nomé da variável, e o valor inicial dela:
+* Para declarar uma variável, colocamos o tipo, o nomé da variável, e o valor inicial dela:
   ```C#
     int i = 0;
     bool ehUmTeste = false
@@ -34,7 +32,7 @@
   int l = 10, m = 20, n = 30;
   ```
 
-## Conversão
+# Conversão
 * Para converter o tipo da variável é necessário fazer um “cast”
   * Usar a classe `Convert` (usar diretamente no valor) (preferível pelo tratamento dos valores nulos)
   * Possível também usar `tipo.Parse()` para fazer o cast no valor, porém ele não existe para tipos string
@@ -51,7 +49,7 @@
 * Possível converter os tipos usando o `TryParse`, pois ele possui tratamento de erros, caso for tentada uma conversão inválida, o mesmo retorna 0.
   * Preciso usar ele como método retornando um valor, colocando o “out” nessa variável de retorno.
 
-## Padrões de escritas (cases):
+# Padrões de escritas (cases):
 * Dentro das linguagens de programação, temos padrões de escrita seguidos para nomear as nossas variáveis, classes, etc
 * Dentre eles temos:  
   * `camelCase`

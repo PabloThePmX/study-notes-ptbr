@@ -32,6 +32,10 @@
   * Coleções
   * Comentários
 
+  ### [Propriedades e Métodos](inicio/props-e-metodos/README.md)
+  * Propriedades
+  * Construtores
+
 * ## [SQL SERVER](../banco-de-dados/README.md) 🗃️
   * O que é o SQL Server
   * Como Instalar
