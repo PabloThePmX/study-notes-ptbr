@@ -120,16 +120,9 @@
         * Isso termina com o programa inteiro.
     * Podemos fazer meenus no console, usando o laço de repetição dessa forma.
 
-### Classe Math
-
-* Declarar essa classe para ter vários tipos de operções
-    * Como Log, potência, etc.
-* Ela também tem as funções trigonométricas (seno, cosseno, tangente, etc)
-    * A mesma tem o pi, para ser usada no cálculo para transformar o ângulo em radianos.
-    * O método `Math.Round(valor, qtd casas decimais)` vai arredondar os valores, nele é possível dizer quantas casas deve ser mostrado depois da vírgula
-* Usar o método sqrt dela para calcular a raiz quadrada.
-
 # Coleções
+
+* Coleçoes de tipos que podem ser lidas a partir de um laço de repetição.
 
 ### Array 
 * Um array trabalha apenas com valores do mesmo tipo
@@ -167,12 +160,13 @@
 * Usar o `Array.Copy()` para copiar valores de um array para outro.
   * O último parâmetro é a quantidade de números a serem copiados, e se for o total da coleção, o jeito mais prático é usar o length
   
-### List
+### Lista
 * Uma lista pode ser mais fácil que um array
   * Lista não precisa ter capacidade máxima definida anteriormente como o array
   * Tentar sempre usar a lista quando possível por ser menos complexa
 * Sintaxe de lista:
     ```C#
+    //dentro do <> da list, vai ser o tipo (que além dos tipos normais, pode ser uma classe também)
     List<string> listaString = new List<string>()
     ```
 * Usar o método `Add` para adicionar os itens 1 por 1, ou `AddRange` para botar vários.
@@ -180,6 +174,7 @@
   * Porém no `for` não usar `length` e sim `count`
 * Uma grande diferença da lista para o array são os seus métodos mais variados
   * Internamente uma lista é um array também
+* O `Remove` e `Add` de uma lista podem retornar booleanos de sucesso ou não.
 
 # Comentarios
 

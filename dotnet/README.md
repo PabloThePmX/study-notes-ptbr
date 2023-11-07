@@ -31,10 +31,27 @@
   * Condições
   * Coleções
   * Comentários
-
-  ### [Propriedades e Métodos](inicio/props-e-metodos/README.md)
-  * Propriedades
+  
+  ### [Classes](inicio/classes/README.md)
   * Construtores
+  * Métodos
+  * Modificadores de Acesso 
+  * EBM
+  
+  ### [Propriedades](inico/props/README.md)
+  * O que é
+  * Declaração
+  * EBM
+
+* ## SINTAXE AVANÇADA C# 🎬
+  ### Outros tipos de coleções
+  * Pilha
+  
+  ### Desconstrutor
+  * O que é
+  * Como declarar
+  
+  ### Tupla
 
 * ## [SQL SERVER](../banco-de-dados/README.md) 🗃️
   * O que é o SQL Server
