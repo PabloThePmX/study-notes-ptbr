@@ -1,1 +1,0 @@
-Apontar para cada tópico abordado no inicio

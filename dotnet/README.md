@@ -1,4 +1,5 @@
-# DOTNET
+# .NET
+
 * O .NET é uma plataforma de desenvolvimento unificado que permite a construção de sistemas e aplicações.
     * O C# é apenas uma linguagem dentro desse ambiente todo.
         * As linguagens do .NET: C#, F# e VB.
@@ -15,20 +16,20 @@
 * O Framework só funciona em Windows.
 * O Core funciona em todas os Sistemas Operacionais.
 
-* ## C# (CSHARP)
-  * O C# veio para competir com o Java, pois o Java conseguia ser multiplataforma.
-  * Ele queria simplificar o desenvolvimento de aplicativos para o Windows.  
-
 * ## POR ONDE COMEÇAR 🐾
   ### [Fundamentos](inicio/fundamentos/README.md)
-  * Visão Geral
-  * O que é o C#
-  * Como funciona a compilação?
-  * Organização Estutural
+  * Visão Geral do C#
+  * Compilação
+  * IDEs
+  * SDK e Runtime
+  * Comandos .NET no CMD
+  * Organização dos Arquivos em C#
 
   ### [Sintaxe Básica do C#](inicio/sintaxe-basica/README.md)
-  * Variáveis
-  * Condições
+  * Tipos de Variáveis
+  * Conversão de Variáveis
+  * Padrões de Escrita (cases)
+  * Operadores e Estruturas de Repetição em C#
   * Coleções
   * Comentários
   
@@ -37,27 +38,67 @@
   * Métodos
   * Modificadores de Acesso 
   * EBM
+  * Classes Genéricas
+  * Classes Abstratas
   
-  ### [Propriedades](inico/props/README.md)
-  * O que é
+  ### Interfaces
+
+  ### [Propriedades](inico/propriedades/README.md)
+  * Definição
   * Declaração
   * EBM
 
+  ### [Programação Orientada a Objetos](inicio/progr-orientada-a-objetos/README.md)
+  * Definição
+  * Pilares
+    * a
+    * a
+    * a
+    * a
+
 * ## SINTAXE AVANÇADA C# 🎬
+
+  ### Try-Catch
+
   ### Outros tipos de coleções
   * Pilha
   
   ### Desconstrutor
-  * O que é
+  * Definição
   * Como declarar
   
   ### Tupla
+
+  ### IF ternário
+
+  ### Valores Nulos
+
+  ### Tipos Anônimos
+
+  ### Tipo Dinâmico
+
+  ### Métodos de Extensão
+
+* ## Memória
+  * Stack
+  * Heap
+
+* ## NUGET
+
+* ## Material Extra
+  
+  ### JSON em C#
+  * 
+
+  ### Trabalhando com Strings
+  * Concatenação
+  * Decimal
 
 * ## [SQL SERVER](../banco-de-dados/README.md) 🗃️
   * O que é o SQL Server
   * Como Instalar
   * Como configurar
-  * Sintaxe básica dos comandos
+  * Sintaxe básica
   
 * ## APIs 🐝
 

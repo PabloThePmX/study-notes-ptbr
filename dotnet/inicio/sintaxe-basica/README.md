@@ -19,7 +19,7 @@
   * Possível usar `ToString()` para mudar a formatação da data
 
 ## Declaração
-* Para declarar uma variável, colocamos o tipo, o nomé da variável, e o valor inicial dela:
+* Para declarar uma variável, colocamos o tipo, o nome da variável, e o valor inicial dela:
   ```C#
     int i = 0;
     bool ehUmTeste = false
@@ -32,7 +32,7 @@
   int l = 10, m = 20, n = 30;
   ```
 
-# Conversão
+# Conversão de Variáveis
 * Para converter o tipo da variável é necessário fazer um “cast”
   * Usar a classe `Convert` (usar diretamente no valor) (preferível pelo tratamento dos valores nulos)
   * Possível também usar `tipo.Parse()` para fazer o cast no valor, porém ele não existe para tipos string
@@ -60,7 +60,7 @@
   * `spinal-case` 
 * O camelCase e PascalCase são os mais usando em C#.
 
-# Operadores e Estuturas de Repetição C#
+# Operadores e Estruturas de Repetição em C#
 
 * Com o operador lógico dentro do `WriteLine`, podemos mostrar os valores de condições diretamente.
 * No VSCode da pra rodar o debug (canto esquerdo).
@@ -122,7 +122,7 @@
 
 # Coleções
 
-* Coleçoes de tipos que podem ser lidas a partir de um laço de repetição.
+* Coleções de tipos que podem ser lidas a partir de um laço de repetição.
 
 ### Array 
 * Um array trabalha apenas com valores do mesmo tipo
@@ -176,7 +176,7 @@
   * Internamente uma lista é um array também
 * O `Remove` e `Add` de uma lista podem retornar booleanos de sucesso ou não.
 
-# Comentarios
+# Comentários
 
 * O comentário `<summary>` permite documentar classes, métodos, parâmetros, etc.
   * Aparece ao passar o mouse

@@ -7,7 +7,9 @@
 * Exemplo do restaurante
   *** COLOCAR A IMAGEM AQUI**
   * O cliente faz o pedido, o garçom recebe, envia para a cozinha e aguarda receber o que foi pedido, logo após, o garçom pega o pedido e envia de volta para o cliente.
-  
+
+# Exemplos de APIs
+
 ### Nager.Date
 * É uma API que retorna os feriados públicos de todos os países.
 * Retorna até os feriados por diferentes anos
