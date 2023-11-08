@@ -43,7 +43,7 @@
   
   ### Interfaces
 
-  ### [Propriedades](inico/propriedades/README.md)
+  ### [Propriedades](inicio/propiedades/README.md)
   * Definição
   * Declaração
   * EBM
