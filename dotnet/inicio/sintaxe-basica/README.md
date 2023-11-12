@@ -40,7 +40,7 @@
     * Alterar o "tipo" para algum dos tipos de variável que queremos transformar.
     * O convert funciona com valores nulos (transforma em 0 por exemplo)
     * O parse apresenta uma exceção quando receber nulo
-      * A exeção vai, obviamente, parar toda a execução.
+      * A exceção vai, obviamente, parar toda a execução.
 * Usar `ToString()` para transformar em string.
   * Esse método é herdado do object, por isso todos os tipos tem esse método.
 * O cast implícito é uma conversão que é feita automaticamente.
@@ -118,7 +118,7 @@
 * Usar `while(true)` para sempre ficar rodando
     * Para sair repentinamente, podemos usar `Environment.Exit(0)`
         * Isso termina com o programa inteiro.
-    * Podemos fazer meenus no console, usando o laço de repetição dessa forma.
+    * Podemos fazer menus no console, usando o laço de repetição dessa forma.
 
 # Coleções
 
