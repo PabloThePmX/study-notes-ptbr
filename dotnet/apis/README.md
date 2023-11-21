@@ -22,6 +22,15 @@
 * Isso tudo pode ser encontrado nas documentações das APIs
 * **TODO: Explicar Fetch** 
 
+### Verbos HTTP
+* POST: Ação de CREATE, ou seja, colocando uma nova informação na api.
+* GET: Ação de READ (SELECT), relacionado ao retorno de uma informação.
+* PUT: Ação de UPDATE, vai atualizar um recurso existente, precisa enviar todos os valores das colunas da entidade.
+* PATCH: parecido com o PUT, porém aqui não é preciso enviar todas as informações da atualização, ou seja, uma atualização parcial.
+* DELETE: Apaga o registro.
+
+**TODO: COLOCAR IMAGEM DA TABELA DOS VERBOS HTTP**
+
 # Criando uma API no .NET
 * No CMD, para criar um projeto de api: `dotnet new webapi`
   * Para executar a API: `dotnet watch run` **TODO: COLOCAR ISSO NO TOPICO DE CMD**

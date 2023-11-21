@@ -103,5 +103,7 @@
 * ## [APIs](apis/README.md) 🐝
 
 * ## [Entity Framework](entity-framework/README.md) 📸
+  * ### [CRUD Endpoints](entity-framework/endpoints-crud/README.md)
 
 * ## ASP.NET 🌐
+  * ### [MVC](asp.net/frontend/mvc/README.md)  

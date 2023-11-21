@@ -8,11 +8,6 @@
 * Tem tanto para .NET Framework, quanto para o Core.
 **TODO: COLOCAR IMAGEM**
 
-**TODO: TOPICOS**
-# Como Usar
-
-# Criando os Endpoints
-
 ### Como Usar
 
 * ### Instalando
@@ -27,6 +22,7 @@
 * ### Criando a Classe Entidade
   * Criar uma classe dentro de uma pasta chamada de `Entities` (com esse nome, para dizer que tudo que tem dentro dessa pasta se refere a tabelas do banco).
     * O nome entidade refere-se a uma tabela que além de estar no banco, também é uma classe.
+      * O nome vai ser singular, pois o EF cria o nome no plural dentro do BD, propriedade `name` no `CreateTable` da migration.
   * As propriedades adicionadas nessa classe, serão criadas como colunas no banco pelo EF.
     * Dessa maneira, devemos colocar uma prop que vai ser o nosso ID (a PK da tabela).
   
@@ -53,7 +49,7 @@
 
   }
   ```
-  * Agora, criar uma propriedade com o tipo da classe `Entities`, que vai estar se referindo a uma tabela no banco.
+  * Agora, criar uma propriedade com o tipo da classe criada em `Entities`, que vai estar se referindo a uma tabela no banco.
   ```C#
   //criando uma prop da tabela Contato
   //devemos criar a prop para a tabela que queremos nos conectar
@@ -81,7 +77,7 @@
           * O código diz basicamente pra ele adicionar um DbContext do tipo AgendaContext e passando as opções.
             * Dizendo para o contexto que criamos (nesse caso a agenda) qual vai ser o banco que vai ser usado e qual a configuração de conexão (ConnectionString) que vai ser usada (nesse caso, a "ConexaoPadrao").
 
-* ### Migrations
+* ### Migrations (**TODO: TALVEZ ESTUDAR MAIS SOBRE O QUE É**)
   * É um mapeamento que o EF faz para transformar as classes em tabelas.
   * O BD deve estar rodando
   * No terminal rodar:
@@ -90,111 +86,10 @@
   * Depois de rodar, as classes criadas tem dois métodos, o Up e o Down
     * Up: Cria a tabela
     * Down: Faz um rollback, dando um drop na tabela
-  * No C# colocamos as classes no nome singular, no banco colocamos no plural **TODO: MUDAR ISSO E COLOCAR EM OUTRO LUGAR**
-    * Com o EF, ele cria automaticamente no plural, propriedade `name` no `CreateTable`
   * Agora, com a migration criada, rodar o comando `dotnet-ef database update` para "aplicar" essas migrations no banco.
     * Ele vai criar o comando SQL e rodar ele no BD.
 
 ### Criando a Controller para o EF
 * Criar na pasta da controller como as outras
-* Colocar a ApiController e a Route também, com as importações necessárias, e herdar da ControllerBase também
-
-### Endpoints CRUD
-
-* ### Create (Insert)
-  * Criar uma propriedade privada, somente leitura do tipo do context.
-  * No construtor, alimentar a propriedade com o valor da variável.
-  * O método CREATE:
-    ```C#
-    public ContatoController(AgendaContext context)
-    {
-      _context = context;
-    }
-    ```
-    * Criar o endpoint (método) do Create
-    * O método ficará:
-      ```C#
-      //vai ser Post, pq estamos enviando uma informação
-      //o contato é a entidade (classe que gera a tabela)
-      [HttpPost]
-      public IActionResult Create(Contato contato)
-      {
-        _context.Add(contato);
-        _context.SaveChanges();
-        return Ok(contato);
-      }
-      ```
-      * No post, não precisa enviar o ID no JSON, pois ele é uma constraint, ou seja, é incrementado automaticamente quando recebe o valor no insert.
-      * Ao executar, ele vai gerar o SQL do insert para executar diretamente no banco. (como aconteceu com a criação da tabela) **TODO: ACHO QUE NÃO PRECISA DISSO**
-
-* ### Read (Select)
-  * Na assinatura do método, o parâmetro a ser recebido, vai ser o valor da coluna que estamos buscando no select.
-  * Vai ser um Get, e como parâmetro dele, vai ser o parâmetro que colocamos para o método.
-    * Pois vamos receber pela endpoint da API, para poder ser usado no método.
-  * O método SELECT:
-    ```C#
-    //método que vai buscar o id enviado por parâmetro no banco
-    [HttpGet("{id}")]
-    public IActionResult ObterPorId(int id)
-    {
-      //usa a config para se conectar e buscar o id no banco
-      var contatoBanco = _context.Contatos.Find(id);
-
-      //caso n exista o id enviado, retorna dizendo que não existe
-      if(contato == null)
-        return NotFound();
-
-      return Ok(contato);
-    }
-    ```
-    
-* ### Update
-  * Esse método terá seu início parecido com o do Select, pois ele vai buscar o registro pelo id, porém depois, ele vai atualizar os valores das propriedades do banco com os valores que foram recebidos por parâmetro.
-    * Depois de alimentar, aplicar o "commit" do update
-  * Vai ser usado o método PUT.
-    * Ele vai pedir pra mandar um json junto com o id.
-  * O método UPDATE:
-    ```C#
-    [HttpPut("{id}")]
-    public IActionResult Atualizar(int id, Contato contato)
-    {
-      //vai buscar o registro pelo id
-      var contatoBanco = _context.Contatos.Find(id);
-
-      if(contatoBanco == null)
-        return NotFound();
-
-      //vai atualizar os valores do registro, com os valores que foram recebidos por parâmetro
-      //a variável contato, recebida por parâmetro, vai ser um json
-      contatoBanco.Nome = contato.Nome;
-      contatoBanco.Telefone = contanto.Telefone;
-      contatoBanco.Ativo = contato.Ativo;
-
-      //vai atualizar e aplicar o commit
-      _context.Contatos.Update(contatoBanco);
-      _context.SaveChanges()
-
-      return Ok(contatoBanco)
-    }
-    ```
-  * ### Delete
-    * Ele vai ser como os outros, primeiro busca o registro pelo id, deleta e aplica o commit.
-    * O método DELETE:
-      ```C#
-      [HttpDelete("{id}")]
-      public IActionResult Deletar(int id)
-      {
-        //vai buscar o registro pelo id
-        var contatoBanco = _context.Contatos.Find(id);
-
-        if(contatoBanco == null)
-          return NotFound();
-        
-        //vai remover e aplicar o commit
-        _context.Contatos.Remove(contatoBanco);
-        _context.SaveChanges();
-
-        //vai retornar com nada, pois o registro foi deletado (código 204)
-        return NoContent();
-      }
-      ```
+* Colocar a ApiController e a Route também, com as importações necessárias, e herdar da ControllerBase também.
+* **TODO: O QUE É INJEÇÃO DE DEPENDÊNCIA?**
