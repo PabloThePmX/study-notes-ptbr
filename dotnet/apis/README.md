@@ -75,7 +75,6 @@
       //o que está em {}, é o parâmetro a ser recebido
       [HttpGet("Apresentar/{nome}")]
       ```
-  * 
 
 # Exemplos de APIs
 

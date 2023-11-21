@@ -100,6 +100,8 @@
   * Como configurar
   * Sintaxe básica
   
-* ## APIs 🐝
+* ## [APIs](apis/README.md) 🐝
+
+* ## [Entity Framework](entity-framework/README.md) 📸
 
 * ## ASP.NET 🌐
