@@ -62,10 +62,10 @@
   * Como estamos testando no desenvolvimento, no `appsettings.Development`, logo após as configurações padrão (Logging) colocar o **Connection String** (botar uma `,` para separar as chaves no JSON):
     ```JSON
     "ConnectionStrings" : {
-      //nome que iremos dar para conexão, o ip do banco (nesse caso, sql server express), o nome do banco de dados e que há autenticação para esse bd (se tiver usuário e senha, precisa passar nessa string)
       "ConexaoPadrao": "Server=localhost\\sqlexpress; Initial Catalog=Agenda; Integrated Security=True"
     }
     ```
+    * Resumindo a sintaxe: Nome que iremos dar para conexão, o ip do banco (nesse caso, sql server express), o nome do banco de dados  e que há autenticação para esse bd (se tiver usuário e senha, precisa passar nessa string)
   * Então, precisamos configurar o context para saber que ele vai usar essa string de conexão:
     * No `Program.cs`, importar o conetext e o EF
       * Onde consta o `Add Services` (é bom colocar essa conexão bem no início do código, pois quando ele for dar o Run, já tem que estar configurado), colocar:
