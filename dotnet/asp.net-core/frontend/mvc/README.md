@@ -39,4 +39,10 @@ O padrão de arquitetura MVC significa Model-View-Controller. Ele separa um apli
 * Nos métodos do IActionResult, retornar a view.
   * Cada método vai ser uma página.
 
-### [Criando uma lista em CSHTML](creating-list-cshtml.md)
+## Exemplos de Telas de CRUD
+
+* ### [Criando uma lista em CSHTML](criando-lista-cshtml.md)
+* ### [Criando página para adicionar um registro](criando-add-cshtml.md)
+* ### [Criando página para editar um registro](criando-edicao-cshtml.md)
+* ### [Criando página para visualizar um registro](criando-detalhes-cshtml.md)
+* ### [Criando página para deletar um registro]

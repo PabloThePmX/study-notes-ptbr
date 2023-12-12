@@ -105,5 +105,6 @@
 * ## [Entity Framework](entity-framework/README.md) 📸
   * ### [CRUD Endpoints](entity-framework/endpoints-crud/README.md)
 
-* ## ASP.NET 🌐
-  * ### [MVC](asp.net/frontend/mvc/README.md)  
+* ## ASP.NET Core 🌐
+  * ### [MVC](asp.net-core/frontend/mvc/README.md)  
+  * ### Blazor

@@ -2,7 +2,7 @@
 * Declarar uma lista da model.
 * Primeiramente, devemos declarar a nossa model 
   ````C#
-  //aqui está pegando a entidade Contato presente no projeto "ProjetoMVC"
+  //aqui está pegando a entidade Contato presente no projeto "ProjetoMVC" como lista
   @model IEnumerable<ProjetoMVC.Models.Contato>
   ```
 * Usar o `@` para dizer que vamos implementar algo em C#.
@@ -51,9 +51,9 @@
           @Html.DisplayFor(model => item.Ativo)
         </td>
          <td>
-          <a asp-action="Editar" asp-route-id="item.Id">Editar</a> |
-          <a asp-action="Detalhes" asp-route-id="item.Id">Detalhes</a> |
-          <a asp-action="Deletar" asp-route-id="item.Id">Deletar</a>
+          <a asp-action="Editar" asp-route-id="@item.Id">Editar</a> |
+          <a asp-action="Detalhes" asp-route-id="@item.Id">Detalhes</a> |
+          <a asp-action="Deletar" asp-route-id="@item.Id">Deletar</a>
         </td>
       </tr>
     }
@@ -65,6 +65,7 @@
   * Nesse body, iremos ler cada registro desse model, e alimentar na table data `<td>`
 * As tags de ancoras, são os botões que vão ir na tabela, eles vão ter a ação, e o valor do registro que vai enviar pela rótula, que no caso seria a PK, o ID.
   * No código usa o `|` somente para fazer a separação esteticamente.
+* Usar`@` no id da rota, para que fique dinâmico 
 * Agora na controller:
   * Colocar o context
   * No index (que é onde terá a lista):
@@ -78,4 +79,3 @@
     }
     ```
 * Caso apresente um erro ao rodar esse código (se estiver usando o watch), executar o projeto novamente.
-* 
