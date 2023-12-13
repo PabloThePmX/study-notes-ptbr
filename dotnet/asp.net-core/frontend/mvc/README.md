@@ -45,4 +45,10 @@ O padrão de arquitetura MVC significa Model-View-Controller. Ele separa um apli
 * ### [Criando página para adicionar um registro](criando-add-cshtml.md)
 * ### [Criando página para editar um registro](criando-edicao-cshtml.md)
 * ### [Criando página para visualizar um registro](criando-detalhes-cshtml.md)
-* ### [Criando página para deletar um registro]
+* ### [Criando página para deletar um registro](criando-deletar-cshtml.md)
+
+## Alterando o menu
+* Dentro da pasta `shared` das views, termos o arquivo `_Layout.cshtml`, e nele que estão as opções do menu.
+  * Esses arquivos dessa pasta, são os arquivos que estão compartilhados entre todas as páginas, carregando-os em todas elas.
+    * Esse arquivo de layout por exemplo, é o layout que vai carregar em todas as páginas do projeto, e é nele que temos um comando para a renderização dos itens da tela (`@RenderBody()`)
+* Nesse arquivo, apenas colocar novos itens na lista de navbar.
