@@ -13,7 +13,7 @@
         </dt>
     </dl>
  </div>
- <a asp-action="Editar" asp-route-id="@Model.Id">Editar</a>
+ <a asp-action="Editar" asp-route-id="@Model.Id">Editar</a> |
  <a asp-action="Index">Voltar</a>
  ```
  * A tag `<dl>` significa definition list.
@@ -30,7 +30,7 @@
         //se n encontra, volta pra pagina de index (teoricamente, n faz nada)
         if(contato == null)
             return RedirectToAction(nameof(Index));
-        
+
         return View(contato);
     }
     ```

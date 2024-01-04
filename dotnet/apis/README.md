@@ -9,7 +9,7 @@
 * Exemplo do restaurante
   ***TODO: COLOCAR A IMAGEM AQUI**
   * O cliente faz o pedido, o garçom recebe, envia para a cozinha e aguarda receber o que foi pedido, logo após, o garçom pega o pedido e envia de volta para o cliente.
-* Outro exemplo: Sistemas de ecommerce costumam usar APIs para enviar a confirmação da compra para a empresa de transporte, confirmado para onde o produto X deverá ser enviado.
+* Outro exemplo: Sistemas de e-commerce costumam usar APIs para enviar a confirmação da compra para a empresa de transporte, confirmado para onde o produto X deverá ser enviado.
   * Quando queremos saber quanto tempo vai demorar para chegar um produto, é feita também uma requisição para a empresa de transportes, que vai retornar essa estimativa.
   * Ambas as empresas, não irão consultar diretamente o banco de dados uma da outra, vai ser a API a responsável por fazer isso.
 * APIs podem ser internas, ou seja, que não estão expostas na internet, e estão disponíveis apenas dentro de uma organização.  

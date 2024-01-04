@@ -8,13 +8,14 @@
     <input type="submit" value="Deletar" class="btn btn-danger"/>
 </form>
 ```
-* O value no input é o nome da controller.
+* O `value` no input é o nome que vai aparecer no botão.
+  * Enquanto o form, com o `asp-action` é o que vai estar usando para buscar o controller, ou seja, o valor do `value` não importa para a controller.
 * A controller do deletar vai ser exatamente igual ao método de detalhes, trazendo os valores do registro para o usuário.
 * É necessário também, criar uma controller do tipo Post para deletar o registro.
   * Ele será muito parecido com o de editar, mudando apenas o método e retirando as alimentações.
   ```C#
   [HttpPost]
-  public IActionResult Editar(Contato contato)
+  public IActionResult Deletar(Contato contato)
   {
     var contatoBanco = _context.Contato.Find(contato.Id)
 

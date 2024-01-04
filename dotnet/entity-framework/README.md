@@ -25,6 +25,8 @@
       * O nome vai ser singular, pois o EF cria o nome no plural dentro do BD, propriedade `name` no `CreateTable` da migration.
   * As propriedades adicionadas nessa classe, serão criadas como colunas no banco pelo EF.
     * Dessa maneira, devemos colocar uma prop que vai ser o nosso ID (a PK da tabela).
+  * Caso existir colunas que irão se repetir em várias entidades, existe a possibilidade de criar uma classe contendo apenas elas, e depois herdar o que foi colocado nessa classe pai (princípio de encapsulamento).
+    * Um exemplo seria colocar o Id na classe pai, e todas as filhas que herdarem dela, já teriam a propriedade Id.
   
 * ### Criando o Contexto
   * Criar uma pasta chamada `Context` e criar uma classe com o nome do BD + Context, ex.: `AgendaContext`
@@ -88,6 +90,7 @@
     * Down: Faz um rollback, dando um drop na tabela
   * Agora, com a migration criada, rodar o comando `dotnet-ef database update` para "aplicar" essas migrations no banco.
     * Ele vai criar o comando SQL e rodar ele no BD.
+  * Toda vez que queremos mudar algo do banco, precisamos criar uma migration nova e rodar o update no banco.
 
 ### Criando a Controller para o EF
 * Criar na pasta da controller como as outras
