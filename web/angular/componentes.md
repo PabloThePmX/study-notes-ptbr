@@ -1,43 +1,111 @@
-# Componentes (sem framework)
+* Componentes lógicos não tem a parte visual, apenas a lógica em si.
+* É apenas um pedaço da composição do layout, e por isso, podem ser reutilizáveis em páginas diferentes.
+* Componentes "começam" no TS.
+* Nada mais são que uma função TS que monta html, css e js.
+  * Na função, vai ter um decorator (tipo uma anotação), que vai dizer o nome do seletor (ou seja, como vai ser o nome da tag), qual o html e qual o css dele.
+    * O css pode ter mais de um arquivo.
+    * As propriedades podem ser definidas inline.
+      * Porém a propriedade deve ser escrita com um nome sem o sufixo `Url`.
+    * É um objeto com propriedades.
+  * Vai exportar uma classe ts.
+    * Nome da classe em PascalCase.
+    * É nessa exportação que serão definidos os parâmetros (interpolação de dados).
+      * As propriedades e o seu tipo, pois é ts.
+        * Todos os tipos, até arrays e objetos.
+      * Para chamar esses parâmetros e pegar o seu valor, usar `{{nomePropriedade}}` dentro da tag que invoca esse componente.
+      * Possível definir um valor padrão nessa declaração, caso a propriedade não seja alimentada com algum valor. (?????????)
+* A composição dos componentes é montada a partir da injeção de dependências.
+  * Todos os componentes são injetados no `app-root` (componente principal) e esse componente é então injetado no `index.html`.
+  * Por isso que ao abrir o dev tools, aparece apenas o index com o `app-root`, pois os outros componentes estão sendo injetados dinamicamente dentro dele.
+* Importar o `component` do `@angular/core` no ts, esse `component` é uma interface.
+  * Isso vai dizer que precisa do decorator `@Component`.
 
-* Todo componente nada mais é que uma **função JS**, que vai retornar JS, HTML e CSS.
-  * Conjunto de elementos, com seu próprio estilo, propriedades (pra deixar o componente dinâmico, basicamente vai receber um parâmetro para alimentar a propriedade) e scripts.
-* Utiliza a shadow DOM, ou seja, cada componente é um DOM diferente.
-* Geralmente a estrutura do projeto é `src/Components/NomeComponente.js`
-* Criar uma classe em JS:
-  * `class Nome extends HTMLElement{}`
-    * Ela herda todos os elementos do HTML.
-      * E vai funcionar como um elemento HTML.
-* Para chamar o construtor:
-  * `constructor {super()}` ou seja, chamando o construtor da classe base (pai).
-* Para criar um shadow Dom, dentro do construtor da classe colocamos:
-  * `const shadow = this.attachShadow({mode: "open"});`
-    * Criando a sombra e dizendo que o JS externo pode modifica-la (por causa da definição do `mode`).
-  * Assim, para escrever alguma tag, escrevemos dentro do `innerHTML` dessa sombra.
-    * `shadow.innerHTML = "<h1>Hello World</h1>"`.
-* Para criar o componente, usar o `define` do `customElements`, dando um nome (o seletor), e especificando qual a classe que está criando esse componente.
-  * Isso fora da classe.
-  * Importante sempre ter um `-` no nome, para diferenciar das tags padrões.
-* Ao chamar o script, colocar a propriedade `defer` para executar esse componente apenas depois que o DOM padrão da página seja criado.
-* Para usar o construtor, chamar como se fosse uma tag, ou seja, o seletor definido no customElement, vai ser o nome da tag.
-* Para criar uma variável com uma tag, utilizamos o `document.createElement("TAG")`, e dessa forma, podemos alimentar as suas propriedades conforme achamos necessário.
-  * Fazer assim para criar um estilo próprio para o componente, usando a tag `style`.
-    * No `text-content` do style, é bom usar a crase para o valor, pois podemos assim deixar esse valor dinâmico, por causa da interpolação.
-      * Esse style vai ser igual a um css normal, com os seletores e suas propriedades.
-        * Porém serão os seletores do componente em si.
-* Para colocar (anexar) o novo elemento no shadow DOM, usar o `appendChild` com o novo elemento nele.
-* Para trabalhar com propriedades:
-  * Definimos que o valor de algo vai ser buscado por um atributo com o `this.getAttribute(novo-atributo)`
-    * Para usar isso, colocar o nome do atributo na tag, contendo o valor desejado, como em `<titulo-dinamico titulo="teste de valor de propriedade"></titulo-dinamico>`.
-  * Para setar um valor pelo componente, chamamos o método `setAttribute()` no elemento que queremos setar, contendo o tipo (ou seja, class, id, etc) e o valor.
-  * Para setar valores em tags que possuem propriedades (como `<img>` e `<a>`):
-    * O próprio elemento vai deixar acessa-lo para setar, `elementoImagem.src = getAttribute("url-imagem")`
-* Podemos usar métodos para os componentes.
-  * Geralmente são criados os métodos `style()` e `build()`.
-    * Ou seja, podemos chamar o `appendChild` para o retorno de cada método.
-      * No final tem que sempre retornar o componentRoot.
-  * Dentro do `build`, podemos criar vários métodos para cada um dos tipos de elementos e seus filhos.
-* Hierarquia vai funcionar com o `appendChild`, ou seja, criamos vários elementos, e vamos fazendo o append conforme são os filhos, até chegar no componentRoot.
-  * Teoricamente, cada elemento com uma classe diferente, vai ser um elemento que devemos criar e anexar no root.
-* Ao mexer com as propriedades, podemos colocar uma condição `OR` para definir um valor padrão, ou seja, se não enviar algum valor, vai usar o default.
-* A classe seletora principal geralmente é chamada de `app-root`.
+## Estrutura do projeto
+* Dentro da pasta `src` são colocados os códigos em si.
+  * O `index` vai apontar apenas para um componente, que é o componente root (`my-app`).
+  * O `main.ts` vai iniciar o angular.
+  * O `polyfills` é pra aumentar a compatibilidade com navegadores mais antigos.
+  * Dentro da pasta `app` temos os componentes.
+    * Os componentes seguem a convenção de nome `nome.component.html/css/ts`.
+      * Tudo minúsculo.
+    * Criar uma pasta apenas para colocar os componentes.
+* O que está fora da `src` são arquivos de configuração. (src out)
+  * Configurações do TS.
+  * Configurações do NodeJS.
+    * O node que vai transpilar o TS.
+  * Configurações do Angular.
+  * Configurações de algumas outras dependências instaladas.
+  * O `style.css` é o css global da aplicação.
+    * O css sempre da preferência pro scoped, ou seja, o css específico do componente vai sobrescrever o valor do global.
+* O arquivo de módulo é responsável por agrupar todos os componentes.
+  * Precisa importar os componentes aqui.
+    * Não precisa dizer o formato do arquivo no caminho da importação.
+  * Declarar no decorator `@NgModule`.
+
+## Data Binding
+* Passa algo da parte lógica, para a parte visível, passa de um lado para o outro.
+* Para dizer que vai receber valor do componente pai, na exportação do componente filho, definir a propriedade (precisa inicializar) com um decorator `@Input()` no início, 
+  * Na hora de chamar, definir o valor da propriedade nas tags, ou seja `<nova-tag [label]="valorLabel">` (geralmente essa é utilizada com maior frequência).
+    * Ou `label="{{valorLabel}}"`.
+      * O `{{ }}` indica que está esperando uma variável (propriedade).
+    * Com colchetes funciona apenas com variáveis, e não com uma string normal (como um texto).
+  * Precisa importar o `input` do core.
+* Podemos definir valores no componente pai, nas propriedades, e então usar essa variável definida para alimentar a propriedade.
+* Para chamar via evento (`event biding`), na tag, colocar o tipo do evento (por exemplo `(click)`, com os parênteses) e ali chamar uma função, função essa que deverá ser exportada junto no componente pai.
+  * Os eventos são os do próprio HTML, e a única diferença é que eles precisam estar dentro de parâmetros.
+  * Os eventos podem ter parâmetros.
+* Para fazer o two way, precisa setar o valor de alguma das propriedades, dentro da tag, ou seja `<input (input)="nomeProp = novo Valor"/>`
+  * O evento `input` só é chamado nesse caso pois é necessário setar o valor a propriedade durante o seu uso, visto que esse evento já é usado implicitamente pela tag `<input>`.
+  * Onde ele está setando o valor da propriedade ao digitar no campo de input.
+  * Ex. mais explicado: `<input [value]="nomeProp" (input)="nomeProp = $any($event.target).value"/>`, ou seja, ele está mostrando o valor de `nomeProp` no `value` da tag, e setando um novo valor para a mesma a partir do que está sendo escrito no campo de input, pois está alimentando o valor da propriedade.
+    * Em resumo, usar o `[]` para mostrar, e `()` para setar.
+  * Podemos fazer de uma maneira mais fácil (diretivas do angular), pois faz de uma vez só:
+    * Ao utilizar o `[(ngModel)] = "nomeProp"`, ele junta os dois comportamentos em uma coisa só.
+  * Para mostrar esse valor em algum local, utilizar a interpolação normalmente.
+  * Esse `ngModule` vem da classe dos módulos do angular, e ela funciona a partir de um módulo importado de uma lib de forms do angular (`FormsModule`).
+* O CSS pode ser dinâmico.
+  * Usar o property biding no `style`.
+    * Se for setar algum valor específico, pode ser algo tipo `[style.color]`
+
+### Tipos de Data Bindings
+* Componentes enviam pro HTML (parte lógica para o HTML)
+  * Interpolação
+    * `{{nomeProp}}`
+  * Property Biding
+    * `[propriedade do html] = "nomeProp"`
+* Evento do html envia algo para o componente
+  * Event Biding
+    * `(evento) = "método()"`
+* Ambos
+  * Two Way Data Biding
+    * `[(ngModel)] = "propriedade"`
+    * Alimenta a propriedade com o valor, dentro da tag
+
+## Ciclo de Vida do Componente (LifeCycle Hooks)
+* Existem 8 no Angular.
+* São interfaces presentes no `angular/core`.
+* Por se tratar de interface, elas precisam ser implementadas.
+* Implementar na classe que é exportada.
+  * A classe pode implementar mais que um hook.
+* `OnInit`
+  * Vai implementar o método `ngOnInit()`.
+    * Ele é disparado quando o componente é iniciado (start).
+    * Existe tanto o construtor, quanto esse método chamado ao inicializar.
+* `OnChanges`
+  * Vai implementar o método `ngOnChanges()`.
+    * Executa quando acontece alguma mudança em alguma das propriedades.
+      * Precisa passar pelo `@Input`, onde quer dizer que algum outro componente que alterou a propriedade.
+    * Pode até ser chamado antes do init, pelo fato de que o valor da propriedade pode ser alterado antes mesmo de iniciar o componente.
+* `DoCheck`
+  * Executa quando uma propriedade do componente é verificada.
+  * Tem 4 sub cheques
+    * Cada um vai checar em um determinado momento, depois de inicializar, depois de criar, etc.
+    * Todos precisam ser importados.
+  * Sempre faz o `OnInit` primeiro, e depois um check.
+    * Existe um check (`ngAfterContentInit`) que executa apenas depois que o `OnInit` for executado.
+  * Ao detectar uma alteração, é feito o check logo após a alteração do componente, depois acontece o check que verifica o conteúdo, e por fim acontece o check da visualização desse conteúdo.
+    * Ou seja: Checked -> Content -> View.
+* `OnDestroy`
+  * Executa assim que o componente é destruído.
+  * Usado juntamente com propriedades `isAliveNomeComponente` para garantir que seja limpa a memória dos componentes que não estão mais sendo usados.
+  * O `ngIf` na tag é responsável por dizer se um componente está existindo na tela ou não, o recomendado seria atrelar essa propriedade ao seu valor, assim, toda vez que alterar o valor da propriedade para false, o componente é dispensado (destruído), e consequentemente chama o `OnDestroy`.

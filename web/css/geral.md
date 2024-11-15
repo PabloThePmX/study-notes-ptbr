@@ -57,6 +57,8 @@
       * `transform: translateY(-50%)` `top: 50%`
     * Verticalmente:
       * `transform: translateX(-50%)` `right: 50%`
+* Tudo que começa com `@` em css é um `At Rule`
+* A propriedade `outline` permite criar um efeito de "expansão" ao fazer hover e afins.
 
 ### Background
 * Por padrão uma imagem de fundo se repete.
@@ -65,3 +67,17 @@
 * Para cobrir todo o espaço visível da tela com a imagem de fundo, usar `background-size: cover`.
 * Para usar tudo em apenas uma propriedade de background, seguir o shorthand:
   * `background: color image repeat position/size`
+
+### Media Queries
+* É preciso dizer que é uma regar com `@media` e depois nos `()` colocar a condição.
+  * Ex.: `@media (min-width: 700px)` só vai aplicar aquelas propriedades em telas maiores que 700px.
+* Só funciona quando há a `<meta>` de viewport no html.
+
+### Animações
+* Adicionar a at rule `@keyframes` e dar um nome a essa animação.
+* Com o `from`, dizer onde vai começar, e com o `to`, onde vai terminar.
+* No seletor, declarar a propriedade como `animation`, colocando como opções o nome da animação (a do keyframe) e o tempo q ela vai levar (em segundos, com um `s` no final).
+* Por padrão, depois que uma animação é feita, ela volta pro seu valor inicial.
+* Podemos colocar uma propriedade junto em animation para manter as propriedades finais (do `to`), chamada `forwards`.
+  * `animation: nome-animacao 0.4s forwards`.
+  * Não precisa caso o seletor já esteja setando manualmente o valor do final da animação.
