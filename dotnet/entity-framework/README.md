@@ -96,3 +96,8 @@
 * Criar na pasta da controller como as outras
 * Colocar a ApiController e a Route também, com as importações necessárias, e herdar da ControllerBase também.
 * **TODO: O QUE É INJEÇÃO DE DEPENDÊNCIA?**
+
+
+### Relations
+* Usar a navegação (colocar o objeto da FK na entidade) nas relações é o equivalente ao usar `JOIN` no banco.
+  * Não é obrigatório ter navegação, porém, isso vai aumentar a complexidade, e o mesmo query que seria feito com `JOIN` vai ser feito com vários `SELECT` e `WHERE`

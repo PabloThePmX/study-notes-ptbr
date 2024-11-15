@@ -55,6 +55,8 @@
 * Vai ser a porta de entrada para a API.
 
 * ### Ação do Controller
+  * Melhor usar métodos assíncronos.
+    * A `Task` nada mais é do que uma `promise`.
   * Antes de criar o método, colocar um atributo dizendo o que vai ser: "GET", "POST", etc
   * O nome visível para o método na requisição HTTP, vai ser exatamente o nome que foi definido no atributo.  
     ```C#

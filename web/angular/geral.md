@@ -9,4 +9,3 @@
 * Angular e AngularJS são coisas diferentes.
   * AngularJS é a versão inicial, e usava TS.
     * Ainda é mantido, porém não recebe maiores atualizações.
-* 
