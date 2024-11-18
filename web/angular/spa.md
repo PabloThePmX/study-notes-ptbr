@@ -1,10 +1,12 @@
 # Single Page Application
 
+* Imports e Declarations
+  * Os `imports` são para declarar as dependências externas, enquanto as `declarations` são para componentes da aplicação.
+
 * Reatividade:
   * Qualquer alteração feita em algo vai atualizar automaticamente, visto que há uma "conexão" entre a ação e o item que está sofrendo essa ação.
     * Em outras palavras, qualquer alteração que ocorre na parte lógica, vai refletir no layout.
     * Ex:. Adiciona um item em uma lista, e não precisa fazer um for novamente pra mostrar esse item.
-
 
 ## Diretivas
 * As diretivas são comandos para manipular a DOM dinamicamente.
@@ -21,6 +23,21 @@
   * Fazer um biding passando as propriedades css, e cada propriedade pode estar atribuída ao valor de uma propriedade ts.
   * Fazer interpolação para alterar os valores.
 * `NgModel` - elemento de formulário se comunicam com o código ts.
+  * Comunicação bi lateral, entre HTML e ts e ts e HTML.
+    * Colocar isso em um input que vai alimentar a informação na propriedade no ts.
+  * Usa a notação `[()]`, ou seja `[(ngModel)] = propriedade` para setar a propriedade e usar a interpolação para mostrar.
+  * Precisa importar o `FormsModule` do core no `app.module`, e precisa colocar no imports também.
+  * Podemos usar isso para enviar um item digitado para uma lista e depois mostra-lo (com o `ngFor` por exemplo).
+* `ngTemplate`
+  * É um template
+  * Usar como se fosse um componente, com `<ng-template>`
+  * Por padrão sempre vem desabilitado (oculto).
+    * Só é mostrado se o `ngIf` dele for true (usar propriedade `isEnableComponente`). 
+* `ngContent`
+  * Permite que um componente pai passe algo para o componente filho, e nele o componente pode ser reajustado.
+  * No pai, dentro da tag do componente, colocar as tags com seus respectivos conteúdos.
+    * Podemos enviar outro componente também.
+  * No filho, com a tag `<ng-content>` usando um `select="tag"` buscar a tag enviada pelo pai para renderizar.
   
 ### Estruturais
 * Alteram a estrutura da DOM.
@@ -43,3 +60,19 @@
   * Cada condição dentro do switch, precisa ter declarado o `*ngSwitchCase` com algum valor para condicionar a partir do valor da propriedade do switch.
     * Precisa alimentar com aspas simples (dentro das aspas duplas).
   * O case default é o `ngSwitchDefault`
+
+## Módulos
+* O módulo vai guardar componentes, diretivas, pipes e services.
+* Precisa importar o `NgModule` do `core`.
+* O `app.module.ts` é o principal.
+* Podemos ter sub módulos, que deverão ser importados no módulo principal.
+  * Neles temos os `exports`, para enviar o que os outros módulos irão usar.
+* No declarator `bootstrap` serão colocados os componentes que irão irão iniciar automaticamente.
+* Da pra criar um módulo a partir do comando `generate`.
+  * Colocar o nome do módulo durante essa geração.
+  * Os componentes precisam ser criados dentro da pasta que tem os módulos.
+* Geralmente é separado com várias pastas de pages, e em cada uma delas tem o módulo.
+* Convenção de pastas:
+  * Geralmente se cria um módulo chamado `shared`, que terá componentes que serão usados em comum por diversas páginas.
+  * Também teremos uma pasta chamada `pages` com várias pastas contendo módulos específicos de cada página.
+    * A inicial se chama `home`. 
