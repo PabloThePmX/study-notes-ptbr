@@ -19,6 +19,9 @@
   * Por isso que ao abrir o dev tools, aparece apenas o index com o `app-root`, pois os outros componentes estão sendo injetados dinamicamente dentro dele.
 * Importar o `component` do `@angular/core` no ts, esse `component` é uma interface.
   * Isso vai dizer que precisa do decorator `@Component`.
+* Uma dica para ter css responsivo, é a de ter dois css no componente, um normal, e outro `.responsive`, e nele tendo o `media queries`.
+  * Lembrar de passar o novo css no decorator do component.
+* Agrupar componentes globais em uma pasta, e componentes de página, dentro da pasta da página (cada página seria um módulo caso usasse da maneira antiga sem ser standalone).
 
 ## Estrutura do projeto
 * Dentro da pasta `src` são colocados os códigos em si.
@@ -91,6 +94,7 @@
   * Vai implementar o método `ngOnInit()`.
     * Ele é disparado quando o componente é iniciado (start).
     * Existe tanto o construtor, quanto esse método chamado ao inicializar.
+      * O construtor é antes de receber os valores vindos como parâmetros.
 * `OnChanges`
   * Vai implementar o método `ngOnChanges()`.
     * Executa quando acontece alguma mudança em alguma das propriedades.
@@ -109,3 +113,26 @@
   * Executa assim que o componente é destruído.
   * Usado juntamente com propriedades `isAliveNomeComponente` para garantir que seja limpa a memória dos componentes que não estão mais sendo usados.
   * O `ngIf` na tag é responsável por dizer se um componente está existindo na tela ou não, o recomendado seria atrelar essa propriedade ao seu valor, assim, toda vez que alterar o valor da propriedade para false, o componente é dispensado (destruído), e consequentemente chama o `OnDestroy`.
+
+## Rotas
+* No `app.routes`, dentro do array, abrir um objeto (transformando o array em um vetor) contendo os itens `path` e `component`.
+  * No `path`, colocar o caminho, e no `component` dizer o nome de qual página deverá ser renderizada.
+    * Sem usar o `/` no `path`.
+  * No path, caso for usada alguma variável para o path, colocar `/:nomeVar`
+* No `app.component` retirar o conteúdo e deixar apenas a tag `router-outlet`.
+  * Possível colocar o `header` e o `footer` aqui também, visto que estes serão os mesmos em todas as páginas.
+  * A parte dinâmica fica dentro dessa tag.
+* Ao usar as rotas para navegar usando o `<a>`:
+  * No TS do componente que vai usar, importar o RouterModule.
+  * Na tag `<a>` colocar o biding `[routerLink]="['path']"` ao invés de `href`.
+    * Se precisar passar algum parâmetro pelo link, passar como `'path', id`.
+      * O parâmetro é uma variável, portanto não precisa estar em aspas simples.
+    * Para buscar o valor dos parâmetros enviadas ao componente clicado, no construtor do componente, receber um atributo privado do tipo `ActivatedRoute`
+      * No `ngOnInit`, usar o `paramMap` desse `ActivatedRoute` e chamar o método `subscribe` e com o lambda, pegar o valor dos parâmetros.
+        * Para pegar um valor especifico, usar o `get("nomeItem")` nas propriedades.
+          * Salvar isso em uma propriedade (usando o `this.prop`) e talvez seja necessário dizer que a propriedade é nullable.
+  * Criar uma função para setar os valores pegos no construtor, no componente.
+    * Fazer um where (filter) no banco e salvando em uma constante.
+      * Pegar o primeiro valor retornado, pois vai retornar um array (pois pode ter mais que um resultado).
+    * Chama-la logo após pegar o valor da propriedade que vem por parâmetro.
+    * Nessa função, alimentar o resultado da busca no banco nas propriedades.
