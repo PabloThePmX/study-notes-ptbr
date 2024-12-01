@@ -61,8 +61,9 @@
     * Precisa alimentar com aspas simples (dentro das aspas duplas).
   * O case default é o `ngSwitchDefault`
 
-## Módulos
+## Módulos (não são obrigatórios nas versões mais recentes do angular)
 * O módulo vai guardar componentes, diretivas, pipes e services.
+  * Por padrão, isso fica dentro do próprio arquivo ts nas versões após a 14.
 * Precisa importar o `NgModule` do `core`.
 * O `app.module.ts` é o principal.
 * Podemos ter sub módulos, que deverão ser importados no módulo principal.
@@ -73,6 +74,8 @@
   * Os componentes precisam ser criados dentro da pasta que tem os módulos.
 * Geralmente é separado com várias pastas de pages, e em cada uma delas tem o módulo.
 * Convenção de pastas:
+  * Pode-se criar uma pasta chamada `components`.
   * Geralmente se cria um módulo chamado `shared`, que terá componentes que serão usados em comum por diversas páginas.
   * Também teremos uma pasta chamada `pages` com várias pastas contendo módulos específicos de cada página.
     * A inicial se chama `home`. 
+    * Vai ser uma junção dos componentes criados.
