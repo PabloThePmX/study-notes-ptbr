@@ -60,6 +60,7 @@
   * Cada condição dentro do switch, precisa ter declarado o `*ngSwitchCase` com algum valor para condicionar a partir do valor da propriedade do switch.
     * Precisa alimentar com aspas simples (dentro das aspas duplas).
   * O case default é o `ngSwitchDefault`
+* A partir das versões mais recentes do Angular, um novo fluxo (control flow) foi adicionado, agora, ao invés de utilizar diretivas de condição, podemos usar diretamente no HTML, `@if`, `@else`, `@else if`, `@for`, `@switch` etc. 
 
 ## Módulos (não são obrigatórios nas versões mais recentes do angular)
 * O módulo vai guardar componentes, diretivas, pipes e services.

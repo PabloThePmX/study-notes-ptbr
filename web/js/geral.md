@@ -8,3 +8,4 @@
 * Shadow DOM: criar (sub) árvores de documento dentro do DOM.
   * Encapsula os elementos e depois anexa essa árvore na árvore principal.
     * Ou seja, isola um documento, virando um componente.
+* O spread é uma maneira de dizer que tal item pode ser repetido diversas vezes, como em um parâmetro, ou seja: `function teste(...item){}`, dessa forma, ele diz que a função pode receber n argumentos.
