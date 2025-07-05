@@ -24,6 +24,8 @@
 * Agrupar componentes globais em uma pasta, e componentes de página, dentro da pasta da página (cada página seria um módulo caso usasse da maneira antiga sem ser standalone).
 * Se o componente for útil apenas para um outro componente, da pra cria-lo dentro da pasta desse componente pai.
   * Colocar o nome do componente com o nome do componente pai e usar o `-` para dizer o nome do filho. (Nem todo mundo faz assim).
+* O decorator `@Injectable` da classe, diz que aquela classe está visível e pode ser injetada por outras.
+  * E o `providedIn` diz onde essa classe esta sendo fornecida, geralmente sendo `root`, significando que desde a raiz, todo mundo enxerga essa classe.
 
 ## Estrutura do projeto
 * Dentro da pasta `src` são colocados os códigos em si.

@@ -13,6 +13,11 @@
 * O serviço é um conteúdo injetável.
   * Antigamente era injetado nos providers do módulo.
   * Injetar no construtor das classes que irão usar o serviço.
+* Da pra salvar um valor local no armazenamento do navegador, usando o `localStorage`
+  * Usar o `setItem(<CHAVE>, <VALOR>)` dele para salvar algo.
+    * E para buscar, usar o `setItem(<CHAVE>)`
+  * Da pra apagar todos os valores salvos no armazenamento com um `clear()`.
+  * Tem que fazer um refresh no local storage do dev tools para ver o valor armazenado.
 
 ## Requisições HTTP
 * Importar o `HttpClientModule` no componente app, de entrada.
