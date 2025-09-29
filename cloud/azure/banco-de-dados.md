@@ -17,6 +17,6 @@ Ir até o recurso `SQL Database` no painel do azure.
 Se formos na visão geral do servidor SQL, ir até o final da página, é possível ver quais bancos estão presentes naquele servidor.
 * Pegar o endereço copiado da URL pública do servidor, e colar no SMMS, e selecionar a opção do SQL Server Authentication.
   * Colocar o login e a senha criados para o banco de dados.
+  * Todos as DBs do servidor estarão disponíveis.
 * Caso não tenha sido colocada a regra do firewall para liberar o IP, devemos ir na aba de `Rede` do Servidor, descer e clicar na opção `Adicionar o endereço IPv4 do cliente`
 * Caso a senha tenha sido esquecida, é possível redefinir a mesma.
-* 
