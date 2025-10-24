@@ -80,3 +80,4 @@
   * Também teremos uma pasta chamada `pages` com várias pastas contendo módulos específicos de cada página.
     * A inicial se chama `home`. 
     * Vai ser uma junção dos componentes criados.
+  * Na pasta `pages` colocar as páginas que vão ser usadas nas rotas, enquanto em `components` vai ser os componentes usados para criar essas páginas.
