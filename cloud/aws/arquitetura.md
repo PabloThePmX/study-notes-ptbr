@@ -4,9 +4,10 @@
 * Requer uma análise sobre quais os objetivos do cliente.
 * E necessário pressupor que tudo poderá falhar em algum momento.
 
-## AWS Well-Architected Framework.
-* Os pilares são: Excelência operacional, segurança, confiabilidade, eficiência de desempenho e otimização de custos (e sustentabilidade).
+## AWS Well-Architected Framework
+* Os pilares são: Excelência operacional, segurança, confiabilidade, eficiência de desempenho e otimização de custos (e sustentabilidade, que é o pilar mais recente).
 * Para cada pilar existem melhores práticas.
+* São realizados reviews com perguntas (cada pilar tem as suas), para entender se foi pensado em todas as soluções/problemas.
 
 ### Excelência Operacional
 * O foco desse pilar é de monitorar sistemas para agregar valor comercial e melhorar os processos e procedimentos de suporte.

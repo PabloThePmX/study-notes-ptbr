@@ -7,10 +7,10 @@
   * Porém pode haver cobranças de serviços que são "chamados" por eles.
 * Na infra tradicional, tem muitos custos capitais.
   * Esse valor não existe na cloud.
-* Alguns serviços permitem instancias reservadas (RIs), e ao fazer a reserva existe uma economia maior pois você está dizendo pra AWS não cobrar mais por uso, e sim cobrar um valor X por um tempo pre determinado.
-  * Instancia reservada com pagamento total antecipado (AURI)
-  * Instancia reservada com pagamento antecipado parcial (PURI)
-  * Instancia reservada com pagamento antecipado (NURI)
+* Alguns serviços permitem instâncias reservadas (RIs), e ao fazer a reserva existe uma economia maior pois você está dizendo pra AWS não cobrar mais por uso, e sim cobrar um valor X por um tempo pre determinado.
+  * instância reservada com pagamento total antecipado (AURI)
+  * instância reservada com pagamento antecipado parcial (PURI)
+  * instância reservada com pagamento antecipado (NURI)
 * TCO - Custo total de propriedade.
   * Estimativa financeira para ajudar a identificar custos diretos e indiretos de um sistema.
   * Usado para criar um orçamento de um caso de negócios para migrar para a nuvem.

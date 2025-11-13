@@ -14,7 +14,7 @@
 * Existem 5 faixas de IPs reservadas, duas são do padrão de rede e outras 3 são por causa da AWS.
 * Da pra ter um IP elástico.
   * Pode ser remapeado a qualquer momento.
-* Uma interface de rede elástica é uma interface que é possível anexar a uma instância e separar da instancia para redirecionar o trafego de rede para outra.
+* Uma interface de rede elástica é uma interface que é possível anexar a uma instância e separar da instância para redirecionar o trafego de rede para outra.
 * A tabela de rotas contém um conjunto de regras ou rotas para direcionar o trafego da sub rede.
 * Cada sub rede deve estar associada a uma tabela de rotas (e no máximo uma).
   * Por padrão contém uma rota local (comunicação que nunca sai do VPC).
@@ -35,7 +35,7 @@
 
 ## Segurança
 * VPCs podem ter grupos de segurança, que trabalham no escopo da instância e controlam as entradas e saídas com regras.
-  * Filtra os tráficos de rede para as instancias.
+  * Filtra os tráficos de rede para as instâncias.
   * Todas as regras são avaliadas antes da decisão de permitir o tráfico.
   * Apenas regras de permissão.
 * Network ACLs são os firewalls no escopo da sub rede em si.

@@ -13,7 +13,7 @@
   * Somente SSDs podem ser usados como boot.
 * Tem snapshots, criptografia e elasticidade.
 * Por ser elástico, da pra aumentar a capacidade e o tipo (HD e SSD).
-* O custo do SSD é calculado pela quantidade de GB alocada no mês, enquanto o HD (magnético) é cobrado pelo número de solicitações para o volume.]
+* O custo do SSD é calculado pela quantidade de GB alocada no mês, enquanto o HD (magnético) é cobrado pelo número de solicitações para o volume.
 * A transferência de dados de entrada e gratuita, enquanto a de saída entre regiões gera cobrança.
 * Dependendo vai ser preciso montar o armazenamento na instância depois de anexa-lo.
   * Ou fazer um resize caso ele já existe para quando ele foi aumentado ou foi criado baseado no snapshot mas com tamanho diferente.

@@ -7,7 +7,7 @@
   * Application Load Balancer: Balanceamento de carga de tráfego HTTP e HTTPS.
   * Network Load Balancer: Balanceamento de carga em tráfego TCP, UDP e TLS.
   * Classic Load Balancer (geração antiga): Balanceamento de carga em HTTP, HTTPS, TCP e SSL.
-* Para o application e network load balancer, é registrado um destino em grupos de destino, enquanto no clássico são registradas as instancias com load balancer.
+* Para o application e network load balancer, é registrado um destino em grupos de destino, enquanto no clássico são registradas as instâncias com load balancer.
 * O listener verifica se há solicitações de conexão.
 * Da pra monitorar o load balancer usando as métricas do CloudWatch, logs de acesso e logs do CloudTrail.
 

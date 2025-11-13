@@ -11,11 +11,11 @@
 * São executadas a partir de Imagens de máquina da Amazon (AMIs).
   * É um modelo, nele consta o SO bem como softwares pre-instalados.
   * Da pra pegar as prontas da AWS, criar, buscar do marketplace ou até mesmo da comunidade (tomar cuidado com essa última).
-  * Da pra criar uma instancia, modifica-la e criar uma AMI baseado nisso.
+  * Da pra criar uma instância, modifica-la e criar uma AMI baseado nisso.
 * Existe em todas as zonas de disponibilidade.
-* O tipo da instancia determinara a memória RAM, CPU, armazenamento e performance de rede.
+* O tipo da instância determinará a memória RAM, CPU, armazenamento e performance de rede.
   * Existem diversas categorias, algumas para uso geral, para computação, memória, armazenamento e computação acelerada (machine learning).
-  * Para a nomeação do tipo da instancia, por exemplo "t3.large" significa que "T" é o nome da família, "3" é o número da geração e "large" é o tamanho.
+  * Para a nomeação do tipo da instância, por exemplo "t3.large" significa que "T" é o nome da família, "3" é o número da geração e "large" é o tamanho.
 * Se atentar a largura de banda, pois o Elastic Network Adapter (ENA) suporta até 100 Gbps, enquanto o Intel 82599 apenas 10 Gbps.
 * Colocar a instância em uma rede VPC.
   * Se a instância é pra estar aberta para a internet, ela precisa estar em uma rede pública (obviamente).
@@ -30,13 +30,13 @@
   * Reduz o número de AMIs, pois o script é quem vai ser responsável pela configuração do ambiente.
   * Da pra usar pra instalar/atualizar softwares necessários.
     * Tipo um `apt update && app upgrade`.
-* Para cada volume da instância, da pra configurar o tamanho, o tipo (HDD ou SSD), se vai ser excluído ao encarrar a instancia e se vai precisar de criptografia.
+* Para cada volume da instância, da pra configurar o tamanho, o tipo (HDD ou SSD), se vai ser excluído ao encerrar a instância e se vai precisar de criptografia.
   * Possível ter o volume raiz (com o SO) e volumes adicionais.
 * Os tipos de armazenamento são:
   * Amazon Elastic Block Store (EBS), usa blocos duráveis, que não são apagados ao encerrar a instância.
     * É como se tivesse um armazenamento externo, "fora" da VM.
-  * Armazenamento de instancias do EC2, aqui se as instancias forem interrompidas, os dados serão excluídos.
-    * Instancias com o volume root dessa forma, não permitem que sejam desligadas via API.
+  * Armazenamento de instâncias do EC2, aqui se as instâncias forem interrompidas, os dados serão excluídos.
+    * instâncias com o volume root dessa forma, não permitem que sejam desligadas via API.
     * Não recomendado para deixar o SO, pois vai ser perdido e a instância não vai conseguir ser ligada.
   * Sem ser do volume raiz temos também:
     * EFS e S3.
@@ -49,13 +49,13 @@
   * Existe fora do SO.
   * Por padrão o grupo permite todo o tipo de tráfego.
 * Da pra especificar um par de chaves para acessar a instância.
-  * Consiste em uma chave pública que a AWS armazena e uma privada armazenada.
+  * Consiste em uma chave pública que a AWS armazena e uma privada armazenada em outro local.
   * Com essa chave da pra fazer o login como admin nas VMs ou obter um acesso SSH.
   * Só da pra pegar a chave privada no momento da criação.
 * As instâncias podem ser criadas de forma programática (CLI ou SDK). 
-* O IPv4 público externo é alterado caso a instancia foi interrompida.
+* O IPv4 público externo é alterado caso a instância foi interrompida.
   * Se precisar de um IP persistido, é necessário utilizar um endereço de IP elástico.
-* Da pra pegar os metadados da instancia acessando `/latest/meta-data` e para pegar os dados do usuário especificado acessando `/latest/user-data`.
+* Da pra pegar os metadados da instância acessando `/latest/meta-data` e para pegar os dados do usuário especificado acessando `/latest/user-data`.
   * A partir disso da pra criar um script que lê essas informações para usar em outro local.
 * Usar o Amazon CloudWatch para monitorar as instâncias.
   * O monitoramento básico (dados são enviados a cada 5min) é gratuito, mas o detalhado (dados enviados a cada 1min) tem taxa mensal fixa.

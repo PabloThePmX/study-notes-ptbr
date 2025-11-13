@@ -8,7 +8,7 @@
 * É recomendado não usar o usuário root da conta, apenas quando necessário.
   * Algumas ações podem ser apenas realizados por ele, como atualizar a senha do usuário raiz, plano, restaurar permissões, etc.
   * Para isso, criar um usuário do IAM para você mesmo, então criar um grupo com permissões de administrações e colocar no novo usuário.
-    * Depois excluir as chaves de acesso do usuário raiz.
+    * Depois excluir as chaves de acesso (quase como as API Keys) do usuário raiz, ou seja, remove a possibilidade da conta root ser usada via CLI ou SDK.
 * Usar o CloudTrail para rastrear as atividade dos usuários da conta.
   * Por padrão ele salva até 90 dias, mas da pra ajustar e salvar no bucket.
 * O Amazon Cognito adiciona login e registro de usuários para os aplicativos web e mobile.
@@ -30,7 +30,7 @@
 
 ## IAM
 * O IAM é usado para gerenciar o acesso aos recursos da AWS.
-  * Ou seja, quem pode controlar tais instancias.
+  * Ou seja, quem pode controlar tais instâncias.
   * Define os direitos de quem, quais e como os recursos podem ser acessados.
 * É um serviço gratuito.
 * Componentes essenciais:
