@@ -17,4 +17,5 @@
 * A rota sera bloqueada caso o retorno da função guard for false.
   * Então é dentro dessa função do guard que vai ter a lógica verificando se o usuário pode ou não acessar a url.
     * Por exemplo: verificar se existe ou não token, dessa forma retorna um boolean dizendo se o usuário fez o login ou não.
-* 
+* O método do guard vai retornar o `CanActivateFn`.
+  * No callback, da pra ter a informação da rota e do estado como parâmetros.

@@ -58,7 +58,8 @@
 * Possível ter rotas com filhas
   * No arquivo das rotas, cada rota por ter uma propriedade `children` que vai ter um array de rotas que irão complementar o pai, ou seja, se o pai + filha for igual a uma das rotas, renderiza aquele componente em específico.
     * Não precisa colocar o `/` nos filhos.
-  * Para buscar o parâmetro em rotas filhas, usar a propriedade firstChild (com nullable) antes de chamar a propriedade `params` ou `queryParams`
+  * Para buscar o parâmetro em rotas filhas, usar a propriedade firstChild (com nullable) antes de chamar a propriedade `params` ou `queryParams`.
+  * Da pra colocar guards apenas para o filhos, com o `canActivateChild`
 
 ## Rotas com parâmetros
 * Nas rotas, colocar `/:id` sendo que o `id` será o parâmetro.

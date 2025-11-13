@@ -63,12 +63,15 @@
 
 ## Organizations
 * Permite consolidar várias contas da AWS permitindo que elas sejam gerenciadas de maneira centralizada.
+  * Da pra anexar políticas aos grupos de contas.
 * Agrupadas em unidades organizacionais (OUs).
+  * Há limites para a quantidade.
 * Permite que cada departamento tenha uma conta diferente com acesso a diferentes recursos.
 * Suporta IAM.
 * As políticas de controle de serviço (SCPs) oferecem controle centralizado sobre contas.
   * São semelhantes as políticas de permissão do IAM.
     * No entanto ela nunca concede permissões, ao invés disso, elas especificam as permissões máximas para uma organização.
+* Simplifica a automatização da criação e gerenciamento de contas usando APIs.
 
 ## Criptografia
 * A AWS Key Management Service permite criar e gerenciar chaves de criptografia.

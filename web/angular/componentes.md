@@ -26,6 +26,7 @@
   * Colocar o nome do componente com o nome do componente pai e usar o `-` para dizer o nome do filho. (Nem todo mundo faz assim).
 * O decorator `@Injectable` da classe, diz que aquela classe está visível e pode ser injetada por outras.
   * E o `providedIn` diz onde essa classe esta sendo fornecida, geralmente sendo `root`, significando que desde a raiz, todo mundo enxerga essa classe.
+* Da pra usar o padrão de nomenclatura do C#, para nomear campos privados e afins.
 
 ## Estrutura do projeto
 * Dentro da pasta `src` são colocados os códigos em si.

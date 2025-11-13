@@ -19,6 +19,7 @@
 * Normalmente um único datacenter tem cerca de 50000 a 80000 servidores físicos.
 * Amazon CloudFront
   * Pontos de Presença (Edge Locations) para reduzir a latência usando melhores rotas.
+    * Não precisam estar localizados na mesma área das regiões
   * São usados caches para buscar o conteúdo.
 * A infra é elástica e escalável, tem tolerância a falhas e alta disponibilidade.
 

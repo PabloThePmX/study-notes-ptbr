@@ -40,3 +40,9 @@
     * Dentro desse subscribe, podemos pegar a resposta caso de certo usando o `subscribe({next: () => console.log("deu certo" + res)})` e caso deu erro, colocar junto ao next a propriedade `error` e buscar o valor da mesma forma que a resposta correta.
       * Ao invés de pegar toda a resposta, podemos pegar propriedades específicas, Ex.: `res.id`, e dessa forma, alimentar o tipo somente com as informações que desejamos.
   * Os tipos precisam ser inicializados, podendo ser tanto na declaração, quanto no construtor.
+* Da pra ter interceptadores que irão interceptar as requisições para modifica-las, um exemplo disso são interceptadores que colocam o token de login.
+  * Criar uma pasta chamada `Interceptors` e dessa forma criar um arquivo que vai exportar um método com os parametros da requisição que vai ser do tipo `HttpRequest<unknown>` e `HttpHandlerFn`.
+    * Nesse método vai ser feita a clonagem da requisição usando o `clone` e vai ser adicionado nele a nova parte. 
+      * No caso de ser um header com token, pegar o `header` da requisição e fazer um `append`.
+    * Retornar o `HttpHandlerFn` com a nova requisição.
+  * Precisa declarar o interceptador no `provideHttpClient` do `app.config` (ApplicationConfig), colocando como parâmetro desse provider, o `withInterceptors`, e a coleção de interceptors que vai ser usada.
