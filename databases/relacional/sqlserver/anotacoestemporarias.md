@@ -1,5 +1,5 @@
 ## Config Sql
 
-* Habilitar SQL Browsear pelo Configuration
+* Habilitar SQL Browser pelo Configuration
   * SQL ServerBrowser o que é
 * Name Pipes

@@ -36,4 +36,3 @@
     * Tudo vai ser montado dinamicamente.
       * Por  padrão, o Angular e React funcionam assim.
     * Acaba não tendo SEO.
-* 

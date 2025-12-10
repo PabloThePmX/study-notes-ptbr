@@ -1,9 +1,10 @@
 # Visão Geral do C#
-  O C# (csharp) é uma linguagem de programação orientada a objetos e fortemente tipada (que declara o explicitamente o tipo das variáveis). Ele permite que desenvolvedores criem aplicações robustas que serão executadas dentro do ambiente .NET.
-  
-  O C# tem suas raízes na família de linguagem C, C++ e Java. Ela até chegou para ser um "competidor" do Java, pois o Java conseguia ser multiplataforma, e ele queria tinha o desejo de simplificar o desenvolvimento de aplicativos para o Windows (depois ele conseguiu ser multiplataforma com a vinda do .NET Core).
 
-  O C# possui vários recursos que auxiliam na criação de aplicações, como a coleta de lixo, tipos anuláveis, tratamento de expressões. lambda, LINQ, operações assíncronas, etc. Além disso, o C# dá suporte a métodos e tipos genéricos, que fornecem maior segurança e desempenho.
+O C# (csharp) é uma linguagem de programação orientada a objetos e fortemente tipada (que declara o explicitamente o tipo das variáveis). Ele permite que desenvolvedores criem aplicações robustas que serão executadas dentro do ambiente .NET.
+
+O C# tem suas raízes na família de linguagem C, C++ e Java. Ela até chegou para ser um "competidor" do Java, pois o Java conseguia ser multiplataforma, e ele queria tinha o desejo de simplificar o desenvolvimento de aplicativos para o Windows (depois ele conseguiu ser multiplataforma com a vinda do .NET Core).
+
+O C# possui vários recursos que auxiliam na criação de aplicações, como a coleta de lixo, tipos anuláveis, tratamento de expressões. lambda, LINQ, operações assíncronas, etc. Além disso, o C# dá suporte a métodos e tipos genéricos, que fornecem maior segurança e desempenho.
 
 # Compilação
 

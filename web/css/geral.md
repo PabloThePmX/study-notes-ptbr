@@ -1,4 +1,5 @@
 # Geral
+
 * O modelo cascata diz, que se houverem mais seletores iguais, a última vai ser utilizada.
   * Ou seja, se houverem dois pesos iguais (especifidade), ele vai pegar o último.
 * Cada seletor tem uma especificidade (o peso):

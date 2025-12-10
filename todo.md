@@ -2,16 +2,12 @@
 
 ### Classe Math
 
-* Declarar essa classe para ter vários tipos de operções
+* Declarar essa classe para ter vários tipos de operações
     * Como Log, potência, etc.
 * Ela também tem as funções trigonométricas (seno, cosseno, tangente, etc)
     * A mesma tem o pi, para ser usada no cálculo para transformar o ângulo em radianos.
     * O método `Math.Round(valor, qtd casas decimais)` vai arredondar os valores, nele é possível dizer quantas casas deve ser mostrado depois da vírgula
 * Usar o método sqrt dela para calcular a raiz quadrada.
-
-# Conceitos Iniciais para o Projeto
-
-* Temos vários tipos de projetos no .NET, como console, API, etc.
 
 ### Abstração
 * A abstração é o conceito de pegar um objeto do mundo real para transformá-lo em um objeto na programação.
@@ -19,6 +15,7 @@
 * Para simplificar os processos, é recomendado abstrair somente o necessário, ou seja, o que será usado de fato.
 
 ### Classe e Métodos
+
 * Um método é uma ação que a classe vai fazer (ele tem parênteses no final).
 * Uma classe tem os atributos e então os métodos, nessa ordem.
 * Todo o nome de classe deve iniciar com maiúscula.

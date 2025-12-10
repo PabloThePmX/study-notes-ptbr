@@ -1,4 +1,5 @@
 # Flexbox
+
 * Existem algumas propriedades importantes e principais:
   * ### Para Container
     * `display: flex`: vai dizer que é do tipo flex, ou seja, vai colocar um plano cartesiano com x e y no elemento.

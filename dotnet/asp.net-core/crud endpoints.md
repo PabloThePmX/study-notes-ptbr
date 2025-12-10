@@ -91,24 +91,24 @@
       return Ok(contatoBanco)
     }
     ```
-  * ### Delete
-    * Ele vai ser como os outros, primeiro busca o registro pelo id, deleta e aplica o commit.
-    * O método DELETE:
-      ```C#
-      [HttpDelete("{id}")]
-      public IActionResult Deletar(int id)
-      {
-        //vai buscar o registro pelo id
-        var contatoBanco = _context.Contatos.Find(id);
+* ### Delete
+  * Ele vai ser como os outros, primeiro busca o registro pelo id, deleta e aplica o commit.
+  * O método DELETE:
+    ```C#
+    [HttpDelete("{id}")]
+    public IActionResult Deletar(int id)
+    {
+      //vai buscar o registro pelo id
+      var contatoBanco = _context.Contatos.Find(id);
 
-        if(contatoBanco == null)
-          return NotFound();
-        
-        //vai remover e aplicar o commit
-        _context.Contatos.Remove(contatoBanco);
-        _context.SaveChanges();
+      if(contatoBanco == null)
+        return NotFound();
+      
+      //vai remover e aplicar o commit
+      _context.Contatos.Remove(contatoBanco);
+      _context.SaveChanges();
 
-        //vai retornar com nada, pois o registro foi deletado (código 204)
-        return NoContent();
-      }
-      ```
+      //vai retornar com nada, pois o registro foi deletado (código 204)
+      return NoContent();
+    }
+    ```
