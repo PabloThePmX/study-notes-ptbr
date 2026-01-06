@@ -18,5 +18,13 @@
     * Ou seja, ele tem overloads
 * Dentro do construtor, alimentar as propriedades com os valores vindo por parâmetro.
   * Ou seja, dentro do construtor será definido onde esses valores irão ir e como serão usados.
-* Nos parâmetros enviados, podemos colocar “<nome>:” antes do valor para dizer o que é.
+* Nos parâmetros enviados, podemos colocar "<nome>:" antes do valor para dizer o que é.
   * Porém precisa ser igual ao nome da variável na declaração do construtor.
+
+## Desconstrutor
+
+* O desconstrutor vai retornar um construtor ao normal, vai voltar a como ele era antes, ou seja, separar os objetos.
+* Usar o `Deconstruct` com a declaração das variáveis out da classe que tem o construtor.
+* A alimentação é o inverso da do construtor, ou seja, ele recebe o valor do construtor e salva na variável declarada como out no `Deconstruct`.
+* Para chamar o desconstrutor na classe principal é parecido com a tupla: `(<variável1>, <variável2>, etc) = <variável da classe instanciada>`
+

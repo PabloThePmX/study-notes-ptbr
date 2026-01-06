@@ -30,7 +30,7 @@ O C# possui vários recursos que auxiliam na criação de aplicações, como a c
      * Podemos instalar as extensões para transformar em uma IDE de uma linguagem específica.
 * No VS Code é preciso instalar uma extensão para ter o intellisense (para
 mostrar os erros e sugestões) do C#
-  * Extensão “C# extensions” para ter a criação de objetos mais clara
+  * Extensão "C# extensions" para ter a criação de objetos mais clara
 
 ### JetBrains Rider
 * JetBrains Rider é uma IDE para o .NET, sendo até mais completo que o
@@ -47,7 +47,7 @@ rodar o .NET, baixo apenas o runtime
 
 # Comandos .NET no CMD
 
-* Usar o comando `dotnet –-info` (duas “-”) no cmd para ver as informações.dos .NET instalados na máquina.
+* Usar o comando `dotnet –-info` (duas "-") no cmd para ver as informações.dos .NET instalados na máquina.
 * Para criar um projeto console no VS Code
   * Abrir o terminal e digitar `dotnet new console`
 * Usar o comando `dotnet run` para rodar o programa.
@@ -79,8 +79,8 @@ ou não)
   * Ir usando a hierarquia Pasta1 - Pasta2 - Pasta3, o namespace será Pasta1.Pasta2.Pasta3
 * Dentro da sln, ao referenciar um projeto, é preciso ter seu caminho completo (com as pastas).
   * É preciso adicionar diretamente a referência do outro projeto (o outro csproj), e assim, é possível utilizar as classes do outro projeto também.
-    * Isso me deixou em dúvida, ao referenciar, preciso colocar o using para chamar o outro projeto? “Chamados de referência quando um projeto precisa conhecer o outro para usar as suas classes.”
-* O método `Main()` (que é a classe “principal e de entrada” de um projeto) está implícito nas versões 6+ do .NET
+    * Isso me deixou em dúvida, ao referenciar, preciso colocar o using para chamar o outro projeto? "Chamados de referência quando um projeto precisa conhecer o outro para usar as suas classes."
+* O método `Main()` (que é a classe "principal e de entrada" de um projeto) está implícito nas versões 6+ do .NET
   * Nas versões antigas ele é explícito
   * Essa classe principal e de entrada é o Program.cs
     * Que nas versões mais antigas tem o Main()
@@ -88,7 +88,7 @@ ou não)
   * Se não especificar, ele pega a última versão instalada na máquina.
 
 ### Bin e Obj
-* Ao compilar, grande parte dos arquivos serão jogados na pasta “obj”.
+* Ao compilar, grande parte dos arquivos serão jogados na pasta "obj".
 * O "bin" é a pasta de binários
   * O build será enviado para cá (os `.exe`, `.dll`, etc.)
 * Ambas são pastas que não precisam ser mexidas, nem salvas no versionamento. Pois ao executar o build, essas pastas serão geradas novamente.

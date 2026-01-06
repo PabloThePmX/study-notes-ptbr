@@ -1,3 +1,11 @@
+# Namespace
+
+* O namespace é uma organização de classes.
+  * Ao utilizar o namespace, é bom colocar com várias divisões (Ex.: `Models.Conta.BancoSicredi`, `Models.Conta.BancoMafra`).
+* Para pegar um classe de outro namespace:
+  * Colocar o using com o namespace da classe.
+* Podemos ter classes com nomes iguais, porém os namespaces devem ser diferentes
+
 # Tipos de Variáveis
 
 ### Numéricos
@@ -9,13 +17,28 @@
   * decimal é geralmente usado para valores monetários
 * **long**, **int**, **decimal** e **double** são os numéricos mais usados.
 * Casas decimais separadas por ponto.
-* Ao alimentar um valor decimal diretamente, é preciso colocar um “M” no final do valor.
+* Ao alimentar um valor decimal diretamente, é preciso colocar um "M" no final do valor.
 * O double é melhor não utilizar para casas decimais, pois ele ignora o último zero.
   * Valores monetários SEMPRE representar com decimal
 
+### Strings
+* Ao somar um inteiro e uma string, acontece um cast implícito que transforma o inteiro em string.
+* Para representar o símbolo e o separador decimal de uma moeda, podemos colocar um ":C" depois da variável durante a interpolação.
+  * Formatação do tipo currency vai usar a "cultura" (localização) que está no sistema que o programa está rodando.
+    * Para alterar a localização do sistema no código devemos importar o System.Globalization e no início do código declarar a culture info default da thread com o valor que queremos.
+  * Usar "InvariantCulture" quando não depende de uma formatação específica baseada na localização.
+* Ao usar o `ToString` podemos também setar um culture info específico para cada necessidade.
+  * O primeiro parâmetro será o tipo (Ex.: o "C" para moedas).
+* No `ToString` podemos também definir quantas casas decimais serão mostradas. (C1, C2, C3, etc), se vai ser apenas número sem o símbolo (N1, N2, etc).
+* Passar como parâmetro no `ToString` o "P" para representar porcentagem.
+* Para formatar o DateTime, podemos usar os parâmetros do ToString também.
+  * Há os métodos short no DateTime para mostrar apenas o horário ou apenas a data.
+* Usar `TryParseExact` para converter datas, pois uma data inválida causa uma exceção ao usar Parse.
+  * Assim retorna um valor padrão (0), ao invés de erro quando é inválida.
+
 ### Data
 * DateTime é o tipo de variável de tempo
-  * DateTime também é um “struct” (DateTime.Now), é possível adicionar valores nesse método também.
+  * DateTime também é um "struct" (DateTime.Now), é possível adicionar valores nesse método também.
   * Possível usar `ToString()` para mudar a formatação da data
 
 ## Declaração
@@ -33,7 +56,7 @@
   ```
 
 # Conversão de Variáveis
-* Para converter o tipo da variável é necessário fazer um “cast”
+* Para converter o tipo da variável é necessário fazer um "cast"
   * Usar a classe `Convert` (usar diretamente no valor) (preferível pelo tratamento dos valores nulos)
   * Possível também usar `tipo.Parse()` para fazer o cast no valor, porém ele não existe para tipos string
   * A diferença deles é sobre os valores nulos.
@@ -45,9 +68,9 @@
   * Esse método é herdado do object, por isso todos os tipos tem esse método.
 * O cast implícito é uma conversão que é feita automaticamente.
   * Um exemplo é de int para double, apenas necessário declarar
-  * Funciona quando o valor “cabe” no tipo
+  * Funciona quando o valor "cabe" no tipo
 * Possível converter os tipos usando o `TryParse`, pois ele possui tratamento de erros, caso for tentada uma conversão inválida, o mesmo retorna 0.
-  * Preciso usar ele como método retornando um valor, colocando o “out” nessa variável de retorno.
+  * Preciso usar ele como método retornando um valor, colocando o "out" nessa variável de retorno.
 
 # Padrões de escritas (cases):
 * Dentro das linguagens de programação, temos padrões de escrita seguidos para nomear as nossas variáveis, classes, etc
@@ -94,7 +117,7 @@
     //inicio contador; limite contador; incrementação contador
     for(int i = 0; i < valor.Length; i++)
     ```
-* Já a sintaxe do `while` só é preciso colocar a condição do limite (“limite cont”), ou seja sempre que a condição for verdadeira.
+* Já a sintaxe do `while` só é preciso colocar a condição do limite ("limite cont"), ou seja sempre que a condição for verdadeira.
     * Ele vai precisar ter o contador incrementado dentro do while, que vai ser incrementado depois de fazer o que queremos dentro do while.
     * Possível usar o `break` para fazer o while parar.
 * O `do while` vai primeiro fazer o laço e ao final vai verificar se a condição ainda é verdadeira ou não
@@ -113,7 +136,7 @@
   int l = 10, m = 20, n = 30;
   ```
 * No VSCode não é possível debugar usando o terminal (Console.ReadLine não funciona por exemplo)
-    * No launch.json, alterar o console para “integratedTerminal”
+    * No launch.json, alterar o console para "integratedTerminal"
     * Ao invés de usar o debug console, usar o terminal durante a debugação
 * Usar `while(true)` para sempre ficar rodando
     * Para sair repentinamente, podemos usar `Environment.Exit(0)`
@@ -139,7 +162,7 @@
 * O índice é a posição de um elemento
   * No C#, ele começa no 0.
 * Usar o `Length` no array para ler todos os seus valores
-  * Quando for lido usando o comando “for”
+  * Quando for lido usando o comando "for"
 * Possível usar o `foreach` para ler a coleção
   * A sintaxe para isso: 
   ```C#
@@ -147,7 +170,7 @@
   foreach(int value in valuesCollection)
   ```
   * A desvantagem é que ele não tem contador como no `for`
-    * Porém da pra colocar um contador “manual”, que é incrementado dentro do código
+    * Porém da pra colocar um contador "manual", que é incrementado dentro do código
 * Usar o `for` quando precisa controlar o contador, e o `foreach` quando não precisa.
 * Para mudar o tamanho do array em runtime:
   ```C#
@@ -176,14 +199,25 @@
   * Internamente uma lista é um array também
 * O `Remove` e `Add` de uma lista podem retornar booleanos de sucesso ou não.
 
+# Exceção
+
+* É possível ter vários blocos catch (no mesmo try) com exceções diferentes
+  * Ao invés de colocar uma variável do tipo "Exception", podemos colocar um tipo de exceção específica para o que queremos.
+    * Podemos ver os tipos de exceção na documentação de cada método.
+* O bloco `finally` pode ser colocado ao final do Try-Catch, e ele será sempre executado, acontecendo alguma exceção ou não.
+  * Útil para fechar conexões com o banco, independente de dar erro ou não.
+* Usando o `throw new Exception` significará que ele irá "jogar" o código para o alto tentando achar um bloco try-catch.
+  * Ele vai "fazer o caminho de volta" no código.
+  * Assim é possível achar um lugar para tratar essa exceção, fazendo com que o programa não se encerre "do nada" e possa continuar.	
+
 # Comentários
 
 * O comentário `<summary>` permite documentar classes, métodos, parâmetros, etc.
   * Aparece ao passar o mouse
-  * Nas settings do VSCode, se habilitar a opção “Format on type”, ao escrever “///” já será colocado o summary
+  * Nas settings do VSCode, se habilitar a opção "Format on type", ao escrever "///" já será colocado o summary
   * Precisa fechar a tag com o `</summary>`
   * Colocar logo em cima da classe, método que vai ser explicado
-  * Quando tem parâmetros, precisa colocar `<param name=”var”>` (e fechar) para dizer o significado de cada parâmetro.
+  * Quando tem parâmetros, precisa colocar `<param name="var">` (e fechar) para dizer o significado de cada parâmetro.
   * A tag `<returns>` vai dizer o que é o valor retornado
 * Comentários não são compilados.
 * Se algo é simples de entender, não precisa de comentário para poluir tanto.
